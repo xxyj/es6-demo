@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>再见了,cha君</title>
+    <link href="../css/song.css"  rel="stylesheet"/>
+</head>
+<body>
+<div id="song-warp"></div>
+<script id="songPage" type="text/regular">
+    <div class="song song-title">陪你一起走过的日子(刘德华)</div>
+    <div class="song song-current">......</div>
+    <video controls="" on-play={this.parseSong($event)} on-timeupdate={this.showSong($event)} preload="" id="media"  class="media">
+        <source src="http://61.130.25.169/m10.music.126.net/20161215155650/5ca752c6353b247b61c46b4ace0fee42/ymusic/98ff/23a8/41ff/0b08e1d0c6e1e08598d90087fddd33e0.mp3?wshc_tag=0&wsts_tag=58524812&wsid_tag=7271c583&wsiphost=ipdbm" type="audio/mpeg">
+</video>
+</script>
+<script type="text/javascript" src="../js/lib/regular.min.js" ></script>
+<script type="text/javascript" src="../js/song.js" ></script>
+</body>
+</html>
