@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<input type="button" onclick="tt()" value="点点看" />
+<input id="s"  style="width:1000px;height:100px;border:1px solid #000" />
+<script type="text/javascript">
+    let s = document.getElementById("s");
+    let tmp=null;
+    function* test()
+    {
+        for(let i=0;i<100;i++){
+            yield xx();
+        }
+    }
+    function tt(){
+         tmp = test();
+         tmp.next();
+    }
+    //模拟后台返回的数据,替代多个有序的替补调用
+    function xx(){
+        window.clearTimeout(window.setTimeout(function(){
+            let t = "后台返回的不同数据:"+Math.floor(Math.random()*100000);
+            s.value = t;
+            let obj = tmp.next();
+            console.info(obj);
+        },1000)-1);
+    }
+</script>
+</body>
+</html>

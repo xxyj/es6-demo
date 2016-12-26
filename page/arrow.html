@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+<script type="text/javascript">
+    var x = 1;
+    var o = {
+        x: 2,
+        showX: function () {
+            window.setTimeout(function () {
+                alert("我不是箭头函数:" + this.x);
+            }, 0)
+         },
+         showX2: function () {
+              window.setTimeout(()=>{alert("我是箭头函数:" + this.x)},0);
+         }
+    };
+    o.showX();
+    o.showX2();
+    o.showX2.apply(window);
+</script>
+</body>
+</html>
