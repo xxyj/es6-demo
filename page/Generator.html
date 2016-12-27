@@ -7,15 +7,15 @@
 <script type="text/javascript">
     let s = document.getElementById("s");
     let tmp=null;
+    function tt(){
+        tmp = test();
+        tmp.next();
+    }
     function* test()
     {
         for(let i=0;i<100;i++){
             yield xx();
         }
-    }
-    function tt(){
-         tmp = test();
-         tmp.next();
     }
     //模拟后台返回的数据,替代多个有序的替补调用
     function xx(){
