@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+    //模拟一个异步请求的返回
+    let i=0;
+    let result = ()=>{
+        i++;
+        if(i <= 3){
+            return {code:200,continue:true};
+        }else{
+            return {code:200,continue:false};
+        }
+     }
+     let getResult =str=>{
+         return new Promise((resolve,reject)=>{
+            var rt = result();
+            if(rt && rt.continue){
+                console.log("我这次请求的是:"+str+"还要进行下次请求哦!");
+                resolve();
+            }else{
+                console.log("我这次请求的是:"+str+"没有下次请求了呢!");
+                reject();
+            }
+         })
+     }
+
+    getResult("小王贝").then(
+            ()=>{return getResult("大海林")}).then(
+            ()=>{return getResult("小金涛")}).then(
+            ()=>{return getResult("大亮军")}).then(
+            ()=>{console.log("成功了")},()=>{console.log("失败了")});
+</script>
+</body>
+</html>
